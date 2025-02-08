@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Resturent Website</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Liter&family=Noto+Sans+Cuneiform&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Fredoka", serif;
+    text-decoration: none;
+}
+html{
+    font-size: 10px;
+}
+
+/* ##########################################  utility classes ########################################## */
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+
+/* ##########################################  navbar styling ########################################## */
+
+/* for desktop mode */
+
+.navbar input[type=text],
+.navbar .hamburger-lines{
+    display: none;
+}
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    opacity: 0.79;
+    z-index: 999;
+}
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+.menu-items{
+     order: 2;
+     display: flex;
+}
+.menu-items li{
+    list-style: none;
+    margin-right: -15px;
+    margin-left: 3rem;
+    font-size: 1.4rem;
+    position: relative;
+    right: 218px;
+    transition: color 0.6 ease-in-out ;
+}
+.logo{
+  order: 1;
+  font-size: 25px;
+}
+.navbar a{
+    color: #444;
+    font-weight: 500;
+}
+.navbar a:hover{
+    color: #117964;
+}
+/* ###########################        showcase styling        ############################### */
+
+.showcase-area{
+    height: 60vh;
+    background:  url("https://thumbs.dreamstime.com/b/healthy-diet-food-background-raw-chicken-breast-various-vegetables-tasty-cooking-top-view-banner-84214313.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+.showcase-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.6rem;
+}
+.btn{
+   display: inline-block;
+   padding: 1em 2.5em;
+   border-radius: 50px;
+   cursor: pointer;
+   /* border: 1px solid black; */
+   outline: none;
+   margin-top: 1em;
+   text-transform: uppercase;
+   font-weight: 500;
+}
+.btn-primary{
+    color: #fff;
+    background-color: #16a083;
+}
+
+
+/* ###########################        self        ############################### */
+
+
+
+.box1{
+    /* border: 1px solid black;     */
+    height: 170px;
+    width: 400px;
+    position: relative;
+    left: 253px;
+    top: 85px;
+    /* background-color: rgb(245, 224, 227); */
+}
+.para{
+    position: relative;
+    bottom: -139px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.para1{
+    font-size: 23px;
+    font-weight: 700;
+    position: relative;
+    bottom: -149px;
+}
+.para2{
+    position: relative;
+    top: 164px;
+    font-weight: 700;
+}
+.para3{
+    font-size: 12px;
+    position: relative;
+    bottom: -180px;
+}
+.box2{
+    position: relative;
+    left: 500px;
+    bottom: 100px;
+}
+footer{
+   text-align: center;
+   position: relative;
+   top: 290px;
+   /* border: 1px solid black; */
+   height: 30px;
+   padding-top: 12px;
+   font-size: 20px;
+   color: rgb(134, 132, 132);
+   font-weight: 500;
+}
+.food-menu{
+    text-align: center;
+    margin-top: 350px;
+    font-size: 25px;
+    color: rgb(134, 132, 132);
+    font-weight: 400;
+}
+.footer{
+    text-align: center;
+    margin-top: 330px;
+    font-size: 30px;
+     font-weight: 400;
+    color: rgb(134, 132, 132);
+}
+.types-of-food{
+    width: 950px;
+    height: 250px;
+    /* border: 2px solid navy; */
+    position: relative;
+    left: 200px;
+    top: 33px;
+    text-align: center;
+    opacity: 0.8;
+}
+.boxy1{
+    display: inline-block;
+    width: 290px;
+    height: 230px;
+    /* border: 2px solid black; */
+    position: relative;
+    right: 15px;
+    background: url("https://www.cubesnjuliennes.com/wp-content/uploads/2022/06/Fresh-Summer-Fruit-Salad-Recipe.jpg");
+    background-size: cover;
+}
+.boxy2{
+    display: inline-block;
+    width: 290px;
+    height: 230px;
+    /* border: 2px solid black; */
+    background: url("https://t3.ftcdn.net/jpg/01/21/83/80/360_F_121838061_eb9T4qBv5fVsRQXTjQLYnbHSAJejpwcK.jpg");
+    background-size: cover;
+}
+.boxy3{
+    display: inline-block;
+    width: 290px;
+    height: 230px;
+    /* border: 2px solid black; */
+    position: relative;
+    left: 15px;
+    background: url("https://septemberfarmcheese.b-cdn.net/wp-content/uploads/Blogs/Homemade-Pizza/homemade-pizza-monterey-jack-cheese.jpg");
+    background-size: cover;
+}
+.anotherfooter{
+    text-align: center;
+    margin-top: 70px;
+    font-size: 30px;
+    color: rgb(134, 132, 132); 
+}
+.alldishes{
+    height: 700px;
+    width: 650px;
+    /* border: 1px solid black; */
+    position: relative;
+    left: 360px;
+    top: 35px;
+}
+.dish1{
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    background: url("https://cdn.loveandlemons.com/wp-content/uploads/2021/04/green-salad.jpg");
+    background-size: cover;
+}
+#dish1{
+    position: relative;
+     left: 207px; 
+    top: 55px;
+    font-size: ;
+}
+.dish2{
+    position: relative;
+    top: 50px;
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    background: url("https://www.eatingwell.com/thmb/M_aWDjL9KLIF_L-fqXNoHcn0OdQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ewl-251317-oatmeal-with-fruit-nuts-4000x4000-23cfd9b280c34392b30a54822b50707a.jpg");
+    background-size: cover;
+}
+.dish3{
+    position: relative;
+    top: 100px;
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    background: url("https://www.cookingclassy.com/wp-content/uploads/2017/08/margherita-pizza-9.jpg");
+    background-size: cover;
+}
+.dish4{
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    position: relative;
+    left: 362px;
+    bottom: 100px;
+    background: url("https://plus.unsplash.com/premium_photo-1684534125661-614f59f16f2e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2Vyc3xlbnwwfHwwfHx8MA%3D%3D");
+    background-size: cover;
+}
+#dish4{
+    position: relative;
+    left: 204px;
+    top: 53px;
+}
+ .dish5{ 
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    margin-left: 361px;
+    position: relative;
+    bottom: 550px;
+    background: url("https://images.themodernproper.com/production/posts/2022/Homemade-French-Fries_8.jpg?w=1200&q=82&auto=format&fit=crop&dm=1662474181&s=687036746e03f50b6204c1390acdb537");
+    background-size: cover;
+}
+.dish6{
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    margin-left: 361px;
+    position: relative;
+    bottom: 1000px;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoIycguxFgTpIN3L00tYQhJ2WkypXj5w_QkQ&s");
+    background-size: cover;
+}
+.anotherfooter1{
+    text-align: center;
+    margin-top: 110px;
+    font-size: 30px;
+    font-weight: 400;
+    color: rgb(134, 132, 132); 
+    /* border: 1px solid black; */
+ }
+    
+ .hicontainer{
+    height: 250px;
+    width: 100%;
+     /* border: 1px solid black; */
+     text-align: center;
+     position: relative;
+     top: 30px;
+ }
+ .bo1{
+    height: 250px;
+    width: 300px;
+    display: inline-block;
+    /* border: 1px solId black; */
+    /* background-color: aquamarine; */
+     margin-right: 100px; 
+ }
+ .bo2{
+    height: 250px;
+    width: 300px;
+    display: inline-block;
+    /* border: 1px solId black; */
+    /* background-color: aquamarine; */
+ }
+ .bo3{
+    height: 250px;
+    width: 300px;
+    display: inline-block;
+    /* border: 1px solId black; */
+    /* background-color: aquamarine; */
+     margin-left: 100px; 
+ }
+ .lasttext{
+    position: relative;
+    top: 30px;
+    font-size: 12px;
+ }
+  .profile{
+    height: 100px;
+    width: 100px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    position: relative;
+    left: 100px;
+    top: 50px;
+    background: url("https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg");
+    background-size: cover;
+ } 
+ .profile1{
+    height: 100px;
+    width: 100px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    position: relative;
+    left: 100px;
+    top: 50px;
+    background: url("https://media.istockphoto.com/id/1317804578/photo/one-businesswoman-headshot-smiling-at-the-camera.jpg?s=612x612&w=0&k=20&c=EqR2Lffp4tkIYzpqYh8aYIPRr-gmZliRHRxcQC5yylY=");
+    background-size: cover;
+ } 
+ .profile2{
+    height: 100px;
+    width: 100px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    position: relative;
+    left: 100px;
+    top: 50px;
+    background: url("https://www.shutterstock.com/image-photo/head-shot-young-attractive-businessman-260nw-1854697390.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+ } 
+ .name1{
+    font-size: 12px;
+    margin-top: 59px;
+ }
+ .name2{
+    font-size: 12px;
+    margin-top: 59px;
+ }
+ .name3{
+    font-size: 12px;
+    margin-top: 59px;
+ }
+ .lastcontainerr {
+    width: 100%;
+    height: 350px;
+    /* border: 1px solid black; */
+    margin-top: 50px;
+    background-color: #eeeaea;
+    opacity: 0.8;
+}
+
+.imagebox {
+    width: 30%;
+    height: 260px;
+    /* border: 1px solid black; */
+    position: relative;
+    position: relative;
+    left: 214px;
+    top: 60px;
+    background: url("https://wallpapers.com/images/hd/restaurant-background-3i0pcyemz5s6cok2.jpg");
+    background-size: cover;
+    border-radius: 8px 0px 0px 12px;
+
+}
+
+.detailbox {
+    width: 30%;
+    height: 260px;
+    /* border: 1px solid black; */
+    position: relative;
+    left: 620px;
+    bottom: 200px;
+    background-color: white;
+    opacity: 1;
+    border-radius: 0px 8px 8px 0px;
+}
+
+#name {
+    font-size: 14px;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+.name {
+    position: relative;
+    top: 5px;
+    width: 100%;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    cursor: pointer;
+}
+#email {
+    font-size: 14px;
+    position: relative;
+    top: 8px;
+    left: 5px;
+}
+.email {
+    position: relative;
+    top: 9px;
+    width: 100%;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    cursor: pointer;
+}
+#textarea{
+    position: relative;
+    top: 13px;
+    width: 100%;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    height: 100px;
+    text-align: center;
+}
+.submit{
+    position: relative;
+    top: 20px;
+    left: 12px;
+    width: 80px;
+    height: 30px;
+    border-radius: 18px;
+    border: none;
+    background-color: #32de84;
+    cursor: pointer;
+}
+.endfooter{
+    text-align: center;
+    width: 100%;
+    height: 55px;
+    background-color: rgb(82, 81, 81);
+    font-size: 17px;
+}
+    </style>
+    <style>
+         .endfooter{
+             text-align: center;
+             width: 100%;
+             height: 55px;
+             background-color: rgb(82, 81, 81);
+             font-size: 17px;
+         }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <!-- <input type="checkbox"> -->
+            <div class="hamburger-lines">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#showcase">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#food">Category</a></li>
+                <li><a href="#food-menu">Menu</a></li>
+                <li><a href="#testimonial">Testimonial</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <h1 class="logo">FW</h1>
+        </div>
+    </nav>
+    <section class="showcase-area" id="showcase">
+        <div class="showcase-container">
+            <h1 class="main_title">EAT RIGHT FOOD</h1>
+            <p>Eat Healthy food, it is good for your health</p>
+            <a href="#food-menu" class="btn btn-primary">Menu</a>
+        </div>
+    </section>
+
+
+
+    <!-- /* ###########################        self        ############################### */ -->
+
+    <div class="box1">
+        <p class="para">About Us</p>
+        <h1 class="para1">We've been Making Healthy</h1>
+        <h1 class="para2">Food for Last 10 Years</h1>
+        <p class="para3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit debitis voluptate ab illum
+            dolorem hic consequuntur at aut sunt aperiam tempora dolores numquam amet nesciunt eos voluptatum esse odit
+            quo nostrum voluptatem dolore suscipit, praesentium deleniti! Dignissimos praesentium illum recusandae?</p>
+        <div class="box2">
+            <img src="https://www.bhg.com/thmb/PggViw-9NJAYpq_xsQAVffXD0Mo=/4000x0/filters:no_upscale():strip_icc()/how-to-store-strawberries-813746952-346e7d6b1c78440394db1fb4bee05790.jpg"
+                alt="" width="400px" height="300pxx
+            ">
+        </div>
+    </div>
+    <div class="footer">
+        TYPES OF FOOD
+    </div>
+    <div class="types-of-food">
+        <div class="boxy1"></div>
+        <div class="boxy2"></div>
+        <div class="boxy3"></div>
+    </div>
+    <div class="anotherfooter">
+        Food Menu
+    </div>
+    <div class="alldishes">
+        <div class="dish1"><span id="dish1">Food Menu Item 1 <br>Saled <br> <span style="color: green;">Price:
+                    $12</span></div>
+        <div class="dish2"><span id="dish1">Food Menu Item 3 <br>Oats <br> <span style="color: green;">Price: $25</span>
+        </div>
+        <div class="dish3"><span id="dish1">Food Menu Item 5 <br> Margrita Pizza <br> <span style="color: green;">Price:
+                    $50</span></div>
+        <div class="dish4"><span id="dish4">Food Menu Item 6 <br> Burger <br> <span style="color: green;">Price:
+                    $50</span></div>
+        <div class="dish5"><span id="dish1">Food Menu Item 4 <br>French Fries <br> <span style="color: green;">Price:
+                    $30</span></div>
+        <div class="dish6"><span id="dish1">Food Menu Item 2 <br>French Fries <br> <span style="color: green;">Price:
+                    $30</span></div>
+    </div>
+
+    <div class="anotherfooter1">
+        What Our Customers Say
+    </div>
+    <div class="hicontainer">
+        <div class="bo1">
+            <p class="lasttext">Lorem ipsum dolor sit amet<br>consectetur adipisicing elit. Cumque, quae id! Ea
+                <br>atque obcaecati nihil beatae odit sunt, reprehenderit.</p>
+            <div class="profile"></div>
+            <div class="name1">John DOE</div>
+        </div>
+        <div class="bo2">
+            <p class="lasttext">Lorem ipsum dolor sit amet <br>consectetur adipisicing elit. Cumque, quae id! Ea
+                <br>atque obcaecati nihil beatae odit sunt, reprehenderit.</p>
+            <div class="profile1"></div>
+            <div class="name2">Angelina Jolie</div>
+        </div>
+        <div class="bo3">
+            <p class="lasttext">Lorem ipsum dolor sit amet <br>consectetur adipisicing elit. Cumque, quae id! Ea
+                <br>atque obcaecati nihil beatae odit sunt, reprehenderit.</p>
+            <div class="profile2"></div>
+            <div class="name3">Eric Topo</div>
+        </div>
+    </div>
+
+    <div class="lastcontainerr">
+        <div class="imagebox"></div>
+        <div class="detailbox">
+            <h1 style="font-size: 20px; font-weight: 430; margin-left: 5px;">Contact Us</h1>
+            <label for="name" id="name">Name</label><br>
+            <input type="text" class="name">
+            <label for="email" id="email">E-mail</label><br>
+            <input type="text" name="email" class="email">
+            <textarea name="" id="textarea" placeholder="Type Your Message Here">Type Your Message Here</textarea>
+            <button class="submit">Submit</button>
+        </div>
+    </div>
+
+      <div class="endfooter">
+        <p style="position: relative; top: 15px;">Resturent Website &#169; 2025, all right reserved.</p>
+      </div>
+
+
+</body>
+
+</html>
